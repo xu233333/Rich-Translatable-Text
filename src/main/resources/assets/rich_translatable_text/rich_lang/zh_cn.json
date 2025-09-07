@@ -1,3 +1,5 @@
 {
-  "text.rich_translatable_text.test_lang": ["这是一个测试文本", "(模组Lang)"]
+  "text.rich_translatable_text.test_lang": [
+    {"text": "这是一个测试文本", "color": "#0000FF"}, {"text": "(模组Lang)", "color": "#00FF00"}
+  ]
 }

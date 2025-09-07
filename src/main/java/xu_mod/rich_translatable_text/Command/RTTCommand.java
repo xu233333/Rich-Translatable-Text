@@ -13,12 +13,12 @@ public class RTTCommand {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(
                 CommandManager.literal("rich_translatable_text")
-                        .then(CommandManager.literal("log_test_lang").executes(RTTCommand::LogTestLang)
+                        .then(CommandManager.literal("log_test_text").executes(RTTCommand::LogTestText)
                 )
         );
     }
 
-    private static int LogTestLang(CommandContext<ServerCommandSource> commandContext) throws CommandSyntaxException {
+    private static int LogTestText(CommandContext<ServerCommandSource> commandContext) throws CommandSyntaxException {
         commandContext.getSource().sendMessage(Text.translatable("text.rich_translatable_text.test_lang"));
         return 1;
     }

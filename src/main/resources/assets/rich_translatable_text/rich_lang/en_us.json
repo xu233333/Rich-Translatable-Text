@@ -1,3 +1,5 @@
 {
-  "text.rich_translatable_text.test_lang": ["This Is A Test Lang", "(Rich Lang)"]
+  "text.rich_translatable_text.test_lang": [
+    {"text": "This Is A Test Text", "color": "#0000FF"}, {"text": "(Mod Lang)", "color": "#00FF00"}
+  ]
 }
