@@ -1,0 +1,4 @@
+accessWidener   v1  named
+accessible field net/minecraft/util/Language GSON Lcom/google/gson/Gson;
+accessible field net/minecraft/util/Language TOKEN_PATTERN Ljava/util/regex/Pattern;
+

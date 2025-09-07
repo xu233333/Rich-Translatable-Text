@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "xu_mod.rich_translatable_text.Mixin",
+	"compatibilityLevel": "JAVA_17",
+	"client": [
+		"TranslationStorageMixin"
+	],
+	"mixins": [
+		"TranslatableTextContentMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "rich_translatable_text",
+	"version": "${version}",
+	"name": "Rich-Translatable-Text",
+	"description": "本地化文件可以使用富文本",
+	"authors": [
+		"XuHaoNan"
+	],
+	"contact": {
+	},
+	"license": "MIT",
+	"icon": "assets/rich_translatable_text/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"xu_mod.rich_translatable_text.RichTranslatableText"
+		],
+		"client": [
+			"xu_mod.rich_translatable_text.RichTranslatableTextClient"
+		]
+	},
+	"mixins": [
+		"rich_translatable_text.mixins.json"
+	],
+	"accessWidener": "rich_translatable_text.accesswidener",
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
