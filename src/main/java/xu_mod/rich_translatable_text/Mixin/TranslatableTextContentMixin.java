@@ -36,6 +36,7 @@ public abstract class TranslatableTextContentMixin {
             if (text != null) {
                 this.translations = new ArrayList<>();
                 this.translations.add(text);
+                ci.cancel();
             }
         }
     }
