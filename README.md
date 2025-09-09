@@ -2,6 +2,9 @@
 
 **Rich Translatable Text 的 github仓库**
 
+## 项目链接
+#### [CurseForge](https://www.curseforge.com/minecraft/mc-mods/rich-translatable-text) - https://www.curseforge.com/minecraft/mc-mods/rich-translatable-text
+
 
 ## 效果展示:
 #### [RTTCommand.java](src/main/java/xu_mod/rich_translatable_text/Command/RTTCommand.java)
