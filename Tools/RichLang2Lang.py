@@ -47,20 +47,6 @@ def ProcessRichLang(JsonData: dict[str, any]) -> dict[str, str]:
 	return FinalLang
 
 
-def ReadJson(FilePath: str) -> str:
-	TryEncodeList = ["utf-8", "utf-8-bom"]
-	with open(FilePath, "rb") as File:
-		for TryEncode in TryEncodeList:
-			try:
-				JsonRaw = File.read().decode(TryEncode)
-				if JsonRaw != "":
-					break
-			except Exception as e:
-				print(e)
-				continue
-	return JsonRaw
-
-
 def ProcessRichLangFile(FilePath: str, OutputPath: str) -> bool:
 	try:
 		with open(FilePath, "rb") as File:
