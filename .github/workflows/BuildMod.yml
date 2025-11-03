@@ -6,9 +6,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     
@@ -24,13 +22,17 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-
+    
+    - name: make gradle wrapper executable
+      if: ${{ runner.os != 'Windows' }}
+      run: chmod +x ./gradlew
+    
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
-
+      
     - name: Build with Gradle Wrapper
       run: ./gradlew build
-
+      
     - name: capture build artifacts
       uses: actions/upload-artifact@v4.3.3
       with:
