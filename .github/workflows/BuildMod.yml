@@ -1,0 +1,40 @@
+name: BuildMod
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Read Properties
+      id: 'properties'
+      uses: christian-draeger/read-properties@1.1.1
+      with:
+        path: gradle.properties
+        properties: 'mod_version archives_base_name minecraft_version'
+    
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
+
+    - name: Build with Gradle Wrapper
+      run: ./gradlew build
+
+    - name: capture build artifacts
+      uses: actions/upload-artifact@v4.3.3
+      with:
+        name: "${{ steps.properties.outputs.archives_base_name }}-Fabric-${{ steps.version.outputs.minecraft_version }}-${{ steps.version.outputs.mod_version }}-InDev"
+        path: build/libs/${{ steps.properties.outputs.archives_base_name }}-Fabric-${{ steps.version.outputs.minecraft_version }}-${{ steps.version.outputs.mod_version }}.jar
