@@ -36,5 +36,5 @@ jobs:
     - name: capture build artifacts
       uses: actions/upload-artifact@v4.3.3
       with:
-        name: "${{ steps.properties.outputs.archives_base_name }}-Fabric-${{ steps.version.outputs.minecraft_version }}-${{ steps.version.outputs.mod_version }}-InDev"
-        path: build/libs/${{ steps.properties.outputs.archives_base_name }}-Fabric-${{ steps.version.outputs.minecraft_version }}-${{ steps.version.outputs.mod_version }}.jar
+        name: "${{ steps.properties.outputs.archives_base_name }}-Fabric-${{ steps.properties.outputs.minecraft_version }}-${{ steps.properties.outputs.mod_version }}-InDev"
+        path: build/libs/${{ steps.properties.outputs.archives_base_name }}-Fabric-${{ steps.properties.outputs.minecraft_version }}-${{ steps.properties.outputs.mod_version }}.jar
